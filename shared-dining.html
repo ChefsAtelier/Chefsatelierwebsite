@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shared Dining — Chefs Atalier</title>
+    <meta name="description" content="Chefs Atalier Shared Dining — samen eten en delen aan één tafel, vanaf 6 personen." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#281732",
+              secondary: "#b28b55",
+              accent: { teal: "#15616D", rust: "#78290F" },
+              cream: "#FFFDF7",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      [data-lucide] {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4QJN4B4K0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-D4QJN4B4K0");
+    </script>
+  </head>
+  <body class="min-h-screen bg-primary font-sans text-cream antialiased">
+    <div id="site-header-mount"></div>
+
+    <main>
+      <section class="relative overflow-hidden border-b border-white/10">
+        <div class="absolute inset-0">
+          <img src="assets/img/dinner.png" alt="" class="h-full min-h-[320px] w-full object-cover md:min-h-[380px]" width="1200" height="600" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/85 to-primary/40" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-4xl px-4 py-16 md:px-6 md:py-20 lg:py-24">
+          <p class="text-sm font-semibold uppercase tracking-wider text-secondary">Ervaringen</p>
+          <h1 class="mt-3 text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl">Chefs Atalier Shared Dining</h1>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">Vanaf 6 personen</span>
+            <span class="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/20 px-4 py-1.5 text-sm font-semibold text-cream">Vanaf €55,50 p.p.</span>
+          </div>
+          <p class="mt-8 max-w-2xl text-lg leading-relaxed text-cream/90 md:text-xl">
+            Samen eten, delen en beleven aan één tafel. Ons shared dining menu is voor wie houdt van gezelligheid zonder in te leveren op kwaliteit.
+          </p>
+          <a
+            href="index.html#kontakt"
+            class="mt-8 inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-primary shadow-lg transition hover:bg-secondary/90 md:px-8 md:text-base"
+          >
+            <i data-lucide="phone" class="h-5 w-5"></i>
+            Bel me terug
+          </a>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 py-16 md:py-24">
+        <div class="mx-auto max-w-3xl space-y-6 px-4 md:px-6">
+          <p class="leading-relaxed text-cream/85">
+            Geen formeel diner, maar een ontspannen setting waarin iedereen aanschuift, deelt en geniet. Borden worden in het midden van de tafel geserveerd, met uitleg en soms een live afwerking, terwijl gesprekken vanzelf op gang komen.
+          </p>
+          <p class="leading-relaxed text-cream/85">
+            Je ervaart dezelfde aandacht en kwaliteit als in ons chefsmenu, maar in een lossere en toegankelijke vorm. Altijd flexibel afgestemd op jouw gezelschap, zodat de avond precies past bij het moment.
+          </p>
+          <p class="leading-relaxed text-cream/85">
+            Ideaal voor wie samen wil genieten, met goed eten als middelpunt.
+          </p>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 bg-[#1f1228] py-16 md:py-24">
+        <div class="mx-auto max-w-3xl px-4 md:px-6">
+          <h2 class="text-2xl font-bold text-cream md:text-3xl">Wat je kunt verwachten</h2>
+          <ul class="mt-10 space-y-6">
+            <li class="flex gap-4">
+              <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-teal/25 text-accent-teal">
+                <i data-lucide="utensils-crossed" class="h-5 w-5"></i>
+              </span>
+              <div>
+                <p class="font-medium text-cream">Gerechten om te delen</p>
+                <p class="mt-1 text-cream/75">6 tot 8 verfijnde gerechten om samen te delen.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-teal/25 text-accent-teal">
+                <i data-lucide="clock" class="h-5 w-5"></i>
+              </span>
+              <div>
+                <p class="font-medium text-cream">In gangen geserveerd</p>
+                <p class="mt-1 text-cream/75">Geserveerd in gangen, met een natuurlijke opbouw van de avond.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-teal/25 text-accent-teal">
+                <i data-lucide="soup" class="h-5 w-5"></i>
+              </span>
+              <div>
+                <p class="font-medium text-cream">Ruim gepresenteerd</p>
+                <p class="mt-1 text-cream/75">Ruim gepresenteerde borden, afgestemd op delen en beleving.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-teal/25 text-accent-teal">
+                <i data-lucide="book-open" class="h-5 w-5"></i>
+              </span>
+              <div>
+                <p class="font-medium text-cream">Interactie aan tafel</p>
+                <p class="mt-1 text-cream/75">Live bereiding, afwerking en storytelling door de chef.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-teal/25 text-accent-teal">
+                <i data-lucide="users" class="h-5 w-5"></i>
+              </span>
+              <div>
+                <p class="font-medium text-cream">Flexibel op maat</p>
+                <p class="mt-1 text-cream/75">Flexibel en afgestemd op jouw gezelschap.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="quote-band relative overflow-hidden border-t border-white/10 bg-[#1f1228] py-16 md:py-24">
+        <div class="pointer-events-none absolute inset-0 select-none" aria-hidden="true">
+          <span
+            class="absolute left-0 top-1/2 -translate-y-1/2 font-serif text-[min(40vw,14rem)] leading-[0.85] text-secondary/45 sm:text-[min(36vw,18rem)] md:-left-4 md:text-[min(32vw,22rem)] lg:text-[min(28vw,28rem)]"
+            >&ldquo;</span
+          >
+          <span
+            class="absolute right-0 top-1/2 -translate-y-1/2 font-serif text-[min(40vw,14rem)] leading-[0.85] text-secondary/45 sm:text-[min(36vw,18rem)] md:-right-4 md:text-[min(32vw,22rem)] lg:text-[min(28vw,28rem)]"
+            >&rdquo;</span
+          >
+        </div>
+        <div class="relative z-10 mx-auto max-w-3xl px-6 text-center sm:px-10 md:px-14">
+          <p class="text-xl font-normal italic leading-relaxed text-cream md:text-2xl md:leading-relaxed">
+            Ideaal voor avonden waarin samenzijn net zo belangrijk is als wat er op tafel staat.
+          </p>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 py-16 md:py-24">
+        <div class="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
+          <h2 class="text-center text-2xl font-bold text-cream md:text-3xl">Perfect voor</h2>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-2xl border border-white/10 bg-primary/60 p-6 text-center shadow-lg shadow-black/20">
+              <i data-lucide="users" class="mx-auto mb-3 h-8 w-8 text-secondary"></i>
+              <p class="font-semibold text-cream">Teamuitje</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-primary/60 p-6 text-center shadow-lg shadow-black/20">
+              <i data-lucide="cake" class="mx-auto mb-3 h-8 w-8 text-secondary"></i>
+              <p class="font-semibold text-cream">21 diner</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-primary/60 p-6 text-center shadow-lg shadow-black/20">
+              <i data-lucide="sparkles" class="mx-auto mb-3 h-8 w-8 text-secondary"></i>
+              <p class="font-semibold text-cream">Vrijgezellenfeest</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-primary/60 p-6 text-center shadow-lg shadow-black/20">
+              <i data-lucide="gift" class="mx-auto mb-3 h-8 w-8 text-secondary"></i>
+              <p class="font-semibold text-cream">Verjaardag</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 bg-[#1f1228] py-16 md:py-24">
+        <div class="mx-auto max-w-3xl px-4 md:px-6">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-secondary">Filosofie</h2>
+          <blockquote class="mt-6 border-l-4 border-secondary pl-6 text-lg leading-relaxed text-cream/90 md:text-xl">
+            Wij werken vanuit een no waste filosofie, waarbij elk product maximaal wordt benut en creativiteit en duurzaamheid samenkomen in elk gerecht.
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 bg-primary py-12 md:py-16">
+        <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+          <h2 class="sr-only">Sfeerbeelden</h2>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
+            <img src="assets/img/mood.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/artichoke-dish.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/champagne.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/cooking-1.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/dessert-1.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/dinner.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/entree-1.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/main-course-1.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/ingredients.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/juice.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/salmon.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <img src="assets/img/steak.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer-mount"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="assets/js/site-layout.js"></script>
+  </body>
+</html>

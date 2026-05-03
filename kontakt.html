@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt — Chefs Atalier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#281732",
+              secondary: "#b28b55",
+              accent: { teal: "#15616D", rust: "#78290F" },
+              cream: "#FFFDF7",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      [data-lucide] {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4QJN4B4K0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-D4QJN4B4K0");
+    </script>
+  </head>
+  <body class="min-h-screen bg-primary font-sans text-cream antialiased">
+    <div id="site-header-mount"></div>
+
+    <main class="mx-auto max-w-3xl px-4 py-16 md:px-6">
+      <h1 class="text-4xl font-bold">Kontakt</h1>
+      <p class="mt-4 text-cream/75">Placeholder: Deze pagina krijgt straks het volledige contactformulier en alle praktische info.</p>
+      <div class="mt-10 space-y-4 rounded-2xl border border-white/10 bg-[#1f1228] p-6">
+        <div class="flex items-center gap-3">
+          <i data-lucide="mail" class="h-5 w-5 shrink-0 text-secondary"></i>
+          <a href="mailto:hello@chefsatalier.nl" class="font-medium hover:text-secondary">hello@chefsatalier.nl</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <i data-lucide="phone" class="h-5 w-5 shrink-0 text-secondary"></i>
+          <a href="tel:+31600000000" class="font-medium hover:text-secondary">+31 6 00 00 00 00</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex shrink-0 text-secondary" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </span>
+          <a href="https://www.instagram.com/chefs.atelier.aan.huis/" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-secondary">@chefs.atelier.aan.huis</a>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer-mount"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="assets/js/site-layout.js"></script>
+  </body>
+</html>
