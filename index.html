@@ -43,6 +43,27 @@
         transform: translate(-50%, -50%) rotate(90deg);
         object-fit: cover;
       }
+      .hero-blur {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .hero-blur__placeholder {
+        filter: blur(20px);
+        transform: scale(1.06);
+        opacity: 0.9;
+      }
+      .hero-blur__hires {
+        opacity: 0;
+        filter: blur(20px);
+        transition:
+          filter 0.5s ease,
+          opacity 0.5s ease;
+      }
+      .hero-blur.is-loaded .hero-blur__hires {
+        opacity: 1;
+        filter: blur(0);
+      }
       .carousel-track {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
@@ -55,6 +76,7 @@
         scroll-snap-align: start;
       }
     </style>
+    <link rel="stylesheet" href="assets/css/blur-up.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4QJN4B4K0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -72,7 +94,26 @@
       <!-- Hero -->
       <section class="relative flex min-h-[min(85vh,820px)] items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-black">
-          <img src="assets/img/hero.png" alt="" class="hero-rotated opacity-95" width="1920" height="1080" />
+          <div class="hero-blur" id="home-hero-blur">
+            <img
+              alt=""
+              width="1920"
+              height="1080"
+              src="data:image/webp;base64,UklGRjYBAABXRUJQVlA4ICoBAACQBgCdASoUABsAPu1krE+ppSQiMBgIATAdiWQAnTLT8aZwG6A3iblwUqGaMFc6JOqqBP28XIoc3E5ndJlgAP6JXVsT1CSSTFIe7fJ77DXZPXkkrrwJpcvqf5SImhq5p7kdv38q49fvuJDd9ydC+oJDwnk1czx0mPFKYb1ZE/K7dYmFkoJmgjE1nJoq+WYVjD5Ml8n4PGT3LuJCQPchhmRRr9vUDmcF84+oqpe/cwr7pchAr5hdQ0H39cm5onDdBroYJAKrvn7Tq7FQgZ+sroWfjZmh1iMkdYh8UuAfLqhxTeI6YZVrmNRUMjij1pBS/D8/9WRa9PYITylrmObkcUIZZI7Wt7/yd8v/jNFn23gTVGtKWkBSqszUXU77LelBGzluDQ9NRIlAAAAA"
+              class="hero-rotated hero-blur__placeholder opacity-95"
+              aria-hidden="true"
+            />
+            <img
+              alt=""
+              width="1920"
+              height="1080"
+              src="assets/img/hero.webp"
+              class="hero-rotated hero-blur__hires opacity-95"
+              decoding="async"
+              fetchpriority="high"
+              id="home-hero-hires"
+            />
+          </div>
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/90 via-neutral-900/50 to-neutral-950/95" aria-hidden="true"></div>
         <div class="relative z-10 mx-auto max-w-4xl px-4 py-20 text-center md:px-6">
@@ -119,7 +160,7 @@
           </div>
           <div class="order-1 md:order-2">
             <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40">
-              <img src="assets/img/dinner.png" alt="Gedekte tafel bij Chefs Atalier" class="aspect-[4/3] w-full object-cover" width="800" height="600" />
+              <span class="blur-up"><img alt="Gedekte tafel bij Chefs Atalier" width="800" height="600" src="data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAQBQCdASoUAB4APu1kqE2ppaOiMAgBMB2JaAC1CP8DA10ZgtQ8+9/YoH+/T6PEc1HAAP7yoYCWBb0kuCNcAmazpJbrxoISj8XxfHG7YlT6KLK9VZkE+ZJq3iL+zCIAglASL4KcVLKnReNhcE2MR88Bxykk4CA43Sm2IZrW8Q9DbM25bL8pLPf80/cR5Q40SPbfm+Udw/aerNieSFek/RIXVS3gQAAA" class="blur-up__placeholder aspect-[4/3] w-full object-cover" aria-hidden="true" /><img alt="Gedekte tafel bij Chefs Atalier" width="800" height="600" data-src="assets/img/dinner.webp" class="blur-up__img aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" /></span>
             </div>
           </div>
         </div>
@@ -137,7 +178,7 @@
             <!-- Card 1 -->
             <article class="carousel-card flex h-full w-[min(100%,340px)] shrink-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-primary/90 shadow-xl ring-1 ring-white/[0.06] md:w-[300px] lg:w-[280px]">
               <div class="relative h-44 w-full shrink-0 overflow-hidden sm:h-48">
-                <img src="assets/img/entree-1.png" alt="" class="h-full w-full object-cover transition duration-300 hover:scale-[1.02]" width="400" height="300" />
+                <span class="blur-up"><img alt="" width="400" height="300" src="data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAwBQCdASoUAB4APu1iqE2ppaOiMAgBMB2JQBhmhDsw9XqcJ7CeAonkHjGfgm/D4HQ9AAD+8pzG6SElPuwtgpgAu18rF+EyJlWU8M/YkJyBs1fA9iwb+ZEGx7R9s5k4/8p09XUwhbOSa3JyxbH2e0pRgAi624on4BEmghQD0gJVwh39mrxBt9Od/PMby97/liLWxDLPkXgERx4kQcTUv/ORMvVmNyVqWJNjTUL0EGJKdg1PmAAAAA==" class="blur-up__placeholder h-full w-full object-cover transition duration-300 hover:scale-[1.02]" aria-hidden="true" /><img alt="" width="400" height="300" data-src="assets/img/entree-1.webp" class="blur-up__img h-full w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" /></span>
               </div>
               <div class="flex min-h-0 flex-1 flex-col p-5">
                 <h3 class="text-lg font-semibold leading-snug text-cream">Experience Menu</h3>
@@ -156,7 +197,7 @@
             <!-- Card 2 -->
             <article class="carousel-card flex h-full w-[min(100%,340px)] shrink-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-primary/90 shadow-xl ring-1 ring-white/[0.06] md:w-[300px] lg:w-[280px]">
               <div class="relative h-44 w-full shrink-0 overflow-hidden sm:h-48">
-                <img src="assets/img/borrel-1.png" alt="" class="h-full w-full object-cover transition duration-300 hover:scale-[1.02]" width="400" height="300" />
+                <span class="blur-up"><img alt="" width="400" height="300" src="data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAACwBQCdASoUAB4APu1irFAppSQisBgIATAdiUAU4ruwsHZt2fTxoJox0ygW8c6ONLae33PvEAAA/vKp+zWN08aME3ue76g+UoC/EmKNl3LQMGGzPnsw0jDPfa8VvQhlowPsb42cR7GEn/HhOSkOTn8fub6Fthn97jbAF2csGNGT4c05z6UZqUOecylEOqaFXQzwA7I63653QdviHIlotBoLrMF1ArRiCXnSQGfXO1488zuAigAAAA==" class="blur-up__placeholder h-full w-full object-cover transition duration-300 hover:scale-[1.02]" aria-hidden="true" /><img alt="" width="400" height="300" data-src="assets/img/borrel-1.webp" class="blur-up__img h-full w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" /></span>
               </div>
               <div class="flex min-h-0 flex-1 flex-col p-5">
                 <h3 class="text-lg font-semibold leading-snug text-cream">Borrel</h3>
@@ -175,7 +216,7 @@
             <!-- Card 3 -->
             <article class="carousel-card flex h-full w-[min(100%,340px)] shrink-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-primary/90 shadow-xl ring-1 ring-white/[0.06] md:w-[300px] lg:w-[280px]">
               <div class="relative h-44 w-full shrink-0 overflow-hidden sm:h-48">
-                <img src="assets/img/main-course-2.png" alt="" class="h-full w-full object-cover transition duration-300 hover:scale-[1.02]" width="400" height="300" />
+                <span class="blur-up"><img alt="" width="400" height="300" src="data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAADQBQCdASoUABkAPu1srFEppaQiqAqpMB2JYgCdBAgOW2O+tm+uGkILF7vP+ez7q1zcz/+D6PIAAPrDxP0j33E7/ansRenJsSVUEPHV3sYlXahHPTMWVO5h4sfS3glSZzGmQgNw/attZ1bWUVQAo4cL+9T1hksAdEMguOsUOWuH+1nrx20iE+7qRqF9r20d1ZHPkXox0X3u5GmhDLJDU+ZjYtOmMyJpsIi7gG8+zDkn0uKYj6UdjXjMnoAAAA==" class="blur-up__placeholder h-full w-full object-cover transition duration-300 hover:scale-[1.02]" aria-hidden="true" /><img alt="" width="400" height="300" data-src="assets/img/main-course-2.webp" class="blur-up__img h-full w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" /></span>
               </div>
               <div class="flex min-h-0 flex-1 flex-col p-5">
                 <h3 class="text-lg font-semibold leading-snug text-cream">Shared Dining</h3>
@@ -194,7 +235,7 @@
             <!-- Card 4 -->
             <article class="carousel-card flex h-full w-[min(100%,340px)] shrink-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-primary/90 shadow-xl ring-1 ring-white/[0.06] md:w-[300px] lg:w-[280px]">
               <div class="relative h-44 w-full shrink-0 overflow-hidden sm:h-48">
-                <img src="assets/img/main-course-1.png" alt="" class="h-full w-full object-cover transition duration-300 hover:scale-[1.02]" width="400" height="300" />
+                <span class="blur-up"><img alt="" width="400" height="300" src="data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABwBQCdASoUAB4APu1mqk2ppaQiMAgBMB2JYgCdAYyAh9dZipxFwhb1VadHzZQ2nhVIrKCYAM3gEA0WDo/Mq4n7HVbIF+BMO+fSCw7xjfX0SIpjN588TpUgBdhlLyN7ohl6BhBWm0tGLLT0zPuzN17Hf3uea0mqCkyPyWiUNIioMct4mGIRmgDDAQ7zAmr2/6ZWaJsJ/rIyOeFYpWzjAtm2CC4dDfXyTrUhajaDS3AAAA==" class="blur-up__placeholder h-full w-full object-cover transition duration-300 hover:scale-[1.02]" aria-hidden="true" /><img alt="" width="400" height="300" data-src="assets/img/main-course-1.webp" class="blur-up__img h-full w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" /></span>
               </div>
               <div class="flex min-h-0 flex-1 flex-col p-5">
                 <h3 class="text-lg font-semibold leading-snug text-cream">Avond Experience</h3>
@@ -222,7 +263,7 @@
 
           <div class="mt-8 grid gap-4 md:mt-0 md:grid-cols-2">
             <article class="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-primary/60 sm:flex-row">
-              <img src="assets/img/champagne.png" alt="" class="aspect-video w-full object-cover sm:aspect-auto sm:h-auto sm:w-40 sm:max-w-[40%]" width="320" height="200" />
+              <span class="blur-up w-full aspect-video object-cover sm:aspect-auto sm:h-auto sm:w-40 sm:max-w-[40%]"><img alt="" width="320" height="200" src="data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADQBACdASoUAB4APu1kqk2ppaQiMAgBMB2JZgCw7CHfSvmiZnZnIdP918xC0cD7QAD+8qDZHzWtR02sC6l/2+ZzRO/UHLcTaZCJujqbfEfUGiPuFwBnBf6/iAlrKxbTZH63RF6Z2/+vMoMtzUvU5rh4wbXBsNhLSWgCbEdeEw2ScwoA1A8skF3XRV1su4jEoZ8g9sRsMWJdSp/n4TQLkYpgOKsYBPsAAAA=" class="blur-up__placeholder w-full h-full object-cover" aria-hidden="true" /><img alt="" width="320" height="200" data-src="assets/img/champagne.webp" class="blur-up__img w-full h-full object-cover" loading="lazy" decoding="async" /></span>
               <div class="flex flex-1 flex-col justify-center p-5">
                 <h3 class="text-lg font-semibold text-cream">Extras</h3>
                 <p class="mt-1 text-sm text-cream/70">Placeholder: Pairings, upgrades, and finishing touches for your table.</p>
@@ -230,7 +271,7 @@
               </div>
             </article>
             <article class="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-primary/60 sm:flex-row">
-              <img src="assets/img/juice.png" alt="" class="aspect-video w-full object-cover sm:aspect-auto sm:h-auto sm:w-40 sm:max-w-[40%]" width="320" height="200" />
+              <span class="blur-up w-full aspect-video object-cover sm:aspect-auto sm:h-auto sm:w-40 sm:max-w-[40%]"><img alt="" width="320" height="200" src="data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBACdASoUABAAPu1iqU2ppaOiMAgBMB2JbACdMoGv/i15j9IEXwZmxwQL6AD3SgHrzO5zBXwb7OJuRX+19DudwGwrq4J7hTu28nn75kvunKA8gq9M3ozAwvKq+QC7wMSqj/jlWfmeof42rs2Os/48bq38lSP4FzxqTzTGtpbQrOzt6u7N3O90AfFZJWvUIWRT7CA7E3rZf7Z0WoxKlx2k7p8L4AAA" class="blur-up__placeholder w-full h-full object-cover" aria-hidden="true" /><img alt="" width="320" height="200" data-src="assets/img/juice.webp" class="blur-up__img w-full h-full object-cover" loading="lazy" decoding="async" /></span>
               <div class="flex flex-1 flex-col justify-center p-5">
                 <h3 class="text-lg font-semibold text-cream">Somelier</h3>
                 <p class="mt-1 text-sm text-cream/70">Placeholder: Wine guidance tailored to your menu and moment.</p>
@@ -245,8 +286,8 @@
       <section id="over-ons" class="border-t border-white/10 bg-void py-16 md:py-24">
         <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:gap-14 md:px-6 lg:px-8">
           <div class="grid grid-cols-2 gap-4">
-            <img src="assets/img/chef-olf-1.png" alt="Olf van Chefs Atalier" class="aspect-[3/4] w-full rounded-2xl object-cover object-top" width="400" height="520" />
-            <img src="assets/img/chef-row-2.png" alt="Chefs Atalier aan het werk" class="aspect-[3/4] w-full rounded-2xl object-cover object-top" width="400" height="520" />
+            <span class="blur-up"><img alt="Olf van Chefs Atalier" width="400" height="520" src="data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAAAwBQCdASoUAB4APu1qrVEppaQiqAqpMB2JZADCgA+3xPDp60Lw/3fX+hka6Uaf1ulLgAD+V5uQXFkhKFyxaTGlACbLNlEO9jmJvuHbbL5f5rHp2TqSTeDFRH/uLhjjnbIWJzscv2045b/qaz1sNdtq2iBdHEzJ0HHaJk3KlMmdOHL5xxwkQrKnnONkEzTcTaaQFE8/cy+Xd3O19xT38IPc7SfXMgfwPJ7bNZ6syTVDSpg+DVPqLAAA" class="blur-up__placeholder aspect-[3/4] w-full rounded-2xl object-cover object-top" aria-hidden="true" /><img alt="Olf van Chefs Atalier" width="400" height="520" data-src="assets/img/chef-olf-1.webp" class="blur-up__img aspect-[3/4] w-full rounded-2xl object-cover object-top" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="Chefs Atalier aan het werk" width="400" height="520" src="data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAABwBQCdASoUAB4APu1gp02ppSMiMAgBMB2JbACdAdwAxaQWcdf5tdng/zKEGdai0hCiTvkaAPyKmWOQjy0bg/aPODNXDTuyFJvqV35r0uC5X07+nwbQ4xfFImvxsG6G3XMYRax5Be1mvyZMxt3ZUEszQUgMjpFGa/iw5+RjvzDH5wvG6Q1/Bpa8B4b9RoNWCcasO0iu2N3aA8AvuquxLStQ2Z0ZG8tRgFfCU6pHsrD8q8mak2rJE5n5Ccx2Eg1PRceprQVp2OANXl/idGPr/+B9dgo5iXSL5evDnFHX8zCR8aQaLNf6IzQA" class="blur-up__placeholder aspect-[3/4] w-full rounded-2xl object-cover object-top" aria-hidden="true" /><img alt="Chefs Atalier aan het werk" width="400" height="520" data-src="assets/img/chef-row-2.webp" class="blur-up__img aspect-[3/4] w-full rounded-2xl object-cover object-top" loading="lazy" decoding="async" /></span>
           </div>
           <div class="flex flex-col justify-center">
             <h2 class="mb-6 text-left text-3xl font-bold text-cream md:text-right md:text-4xl">Over ons</h2>
@@ -350,18 +391,18 @@
         <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
           <h2 class="sr-only">Sfeerbeelden</h2>
           <div class="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
-            <img src="assets/img/mood.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/artichoke-dish.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/champagne.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/cooking-1.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/dessert-1.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/dinner.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/entree-1.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/main-course-1.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/ingredients.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/juice.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/salmon.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
-            <img src="assets/img/steak.png" alt="" class="aspect-square w-full rounded-lg object-cover" width="400" height="400" />
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRiQBAABXRUJQVlA4IBgBAACwBgCdASoUAB4APu1gqE2ppaOiMAgBMB2JZgCdOUELRy/54AyvYa9osPgyb5HNaAT/CITpbJCqCf5a0areEAD+8rmWznN938ed3LbV+A5XoHyQtKiEqqmHCSwVBLtiaKmu7q0MuFw4WmiJ4H32q/rtDA66JP6mN2dBD1TexR1+fUTbV0kPP6psJ7BdCOziagdG8cEp+ifmzW+CvmTxH9w8q+Zpleb0h61YrpLMb3YjU6X8/9KvQFbCjcQTB56OVzrRrLnxA6l4o4yifoeT2Ix8kgfNeYxfViTKc82kxqaQBaD8F5VB2Poh4oESd7Ef3FldWcJCEOaKF8UlssoxhPRjbMcvilsdLnBpSLmMagkHk9mIjcY1AAAA" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/mood.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JbACdMoACjdVleTPCKCE4D+AA/sFqizUkNjC91ikFomsOjAkYiEPoukHub4GCDO/dlZfJeiwQE/9Jis7XPBT3rxT4b7qa+/pUBDLg9+czshCphrZQbCDNuqRHT3N64ZWX8HtOK9Vq7SUuji8uSs/U3JPIAAAA" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/artichoke-dish.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADQBACdASoUAB4APu1kqk2ppaQiMAgBMB2JZgCw7CHfSvmiZnZnIdP918xC0cD7QAD+8qDZHzWtR02sC6l/2+ZzRO/UHLcTaZCJujqbfEfUGiPuFwBnBf6/iAlrKxbTZH63RF6Z2/+vMoMtzUvU5rh4wbXBsNhLSWgCbEdeEw2ScwoA1A8skF3XRV1su4jEoZ8g9sRsMWJdSp/n4TQLkYpgOKsYBPsAAAA=" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/champagne.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRgwBAABXRUJQVlA4IAABAAAQBwCdASoUAB4APu1iqU2ppaOiMAgBMB2JagCdMoSCv9CY5VARPYsHSrt/Gj922u04rgD00VqbsK+xCRsiTp10AAD+75F/h88LFC1yycvgkgAZ4gRiTjQT8kcTvP3xdFfc8EITnVufrGHJSaxDSN1jVCQBpGeiJT2WnszFhP5X18knLCkQGbUX1mYD6XFb75LSFVydclXIH/aM0wg+wCwZK+csDnyPySrT4DUE0OjtT0CZ5dYnOeuiiyr8Y3yYru5yb5vRcMDGX30DwdWQycV5+/qXAwVBEFGU/6sk5I6VKqtslDx1BvB2W1LU60Fl4z0rt7Uc31TyiSNHoLyQFoAA" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/cooking-1.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAADQBQCdASoUAB4APu1iqE2ppaOiMAgBMB2JQBgfmxQWorWu40ZKjBfdpCAFOqR6wSbAOHn/xadAAP7ytLhRT2L3EeXG/VzlAtkZpZUXnUTxgiAYckjsHrNkl5eSWiYgmSsCvIq97IGCyGoRJyQEGS/f4hSEyg1gaWRtGYqUzcm/3CTistKT0wkAuez7NZpmPDyUX4JN+jh3Wg9KS98PIPR67vpYtbcOHNgSydDXgkVBj8rD5pgeyIfw7JgBS9i0rXO1oKKakZBS7PiaR5enrijKLGVwYlWQ+QAjyTwucyEAAA==" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/dessert-1.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAQBQCdASoUAB4APu1kqE2ppaOiMAgBMB2JaAC1CP8DA10ZgtQ8+9/YoH+/T6PEc1HAAP7yoYCWBb0kuCNcAmazpJbrxoISj8XxfHG7YlT6KLK9VZkE+ZJq3iL+zCIAglASL4KcVLKnReNhcE2MR88Bxykk4CA43Sm2IZrW8Q9DbM25bL8pLPf80/cR5Q40SPbfm+Udw/aerNieSFek/RIXVS3gQAAA" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/dinner.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAwBQCdASoUAB4APu1iqE2ppaOiMAgBMB2JQBhmhDsw9XqcJ7CeAonkHjGfgm/D4HQ9AAD+8pzG6SElPuwtgpgAu18rF+EyJlWU8M/YkJyBs1fA9iwb+ZEGx7R9s5k4/8p09XUwhbOSa3JyxbH2e0pRgAi624on4BEmghQD0gJVwh39mrxBt9Od/PMby97/liLWxDLPkXgERx4kQcTUv/ORMvVmNyVqWJNjTUL0EGJKdg1PmAAAAA==" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/entree-1.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABwBQCdASoUAB4APu1mqk2ppaQiMAgBMB2JYgCdAYyAh9dZipxFwhb1VadHzZQ2nhVIrKCYAM3gEA0WDo/Mq4n7HVbIF+BMO+fSCw7xjfX0SIpjN588TpUgBdhlLyN7ohl6BhBWm0tGLLT0zPuzN17Hf3uea0mqCkyPyWiUNIioMct4mGIRmgDDAQ7zAmr2/6ZWaJsJ/rIyOeFYpWzjAtm2CC4dDfXyTrUhajaDS3AAAA==" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/main-course-1.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBACdASoUABAAPu1iqU2ppaOiMAgBMB2JZACdL1yBsMVXGiPMtQgfgAD+7QjfTZXQbmAi3D7w0i2xysYtCV47WuSN/oe4C1mZdkyLrM13x6UUF6mAug9NUqSstrcpR9i69lShygmFCzWvCfzT8Kf+V30jzHmZbCz3cosHioTU0Ipw53cZypCYRDNr9DfH+g0OAqmFHAA=" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/ingredients.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBACdASoUABAAPu1iqU2ppaOiMAgBMB2JbACdMoGv/i15j9IEXwZmxwQL6AD3SgHrzO5zBXwb7OJuRX+19DudwGwrq4J7hTu28nn75kvunKA8gq9M3ozAwvKq+QC7wMSqj/jlWfmeof42rs2Os/48bq38lSP4FzxqTzTGtpbQrOzt6u7N3O90AfFZJWvUIWRT7CA7E3rZf7Z0WoxKlx2k7p8L4AAA" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/juice.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAABwBgCdASoUAB4APu1mq0+ppSOiMBgIATAdiUAV4l4GqBR9hQK19173iXuklHqpW/s73DI3qItRi8hP80AA/hYx8X3M0sC+7zg8bQM63pja5plhbF/Z2l3jqDpVYjpRe4jXCMhsDzktcAzeFTGI9p7u+VF4AmnIS7PQu0e73KyQEy1Z5Grzkt/qjAoyCGm4W/AKjb5sdqn+S/WcYvmwAV8i+Z4ujUdGeqQuLKyoTQIG6n6x7nq4V+IYWws6aCNzhUuS1oKe02bPLUe/nL7ZX0UAzd6TvjiPU3a53GGZ7aCGeT3R78ljpD9P1CjsOYv4Ls6IUxLWBECC1NlxAAA=" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/salmon.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
+            <span class="blur-up"><img alt="" width="400" height="400" src="data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAACQBQCdASoUABkAPu1srVKppaQiqAgBMB2JbACdMoSCmBUPZJxDZTL+QoUcikboQpWIPqmMgAD+L7ZtFBvPgzOPysFy9bWaeYjjkNbpX6s3E6IH2/fB7eKHTT2UeeLuyqMFC58aMOuRPE7ltObd3G/9Sl5b/1FAFz2c8ACreYHMI6yJzEMlLzcQuWci2lWXUIeyfD+UPF6yGf1pSfRfaKni1mZ8pTqzL3Nc6pIt9mPtbfBCM0pHPD3C5KYNQBA869bA8tEGW0NFBYXgAAA=" class="blur-up__placeholder aspect-square w-full rounded-lg object-cover" aria-hidden="true" /><img alt="" width="400" height="400" data-src="assets/img/steak.webp" class="blur-up__img aspect-square w-full rounded-lg object-cover" loading="lazy" decoding="async" /></span>
           </div>
         </div>
       </section>
@@ -369,9 +410,26 @@
 
     <div id="site-footer-mount"></div>
 
+    <script src="assets/js/blur-up.js" defer></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="assets/js/site-layout.js"></script>
     <script>
+      (function () {
+        var wrap = document.getElementById("home-hero-blur");
+        var img = document.getElementById("home-hero-hires");
+        if (!wrap || !img) return;
+
+        function markLoaded() {
+          wrap.classList.add("is-loaded");
+        }
+
+        if (img.complete) {
+          markLoaded();
+        } else {
+          img.addEventListener("load", markLoaded, { once: true });
+        }
+      })();
+
       (function () {
         var viewport = document.getElementById("carousel-viewport");
         if (!viewport) return;

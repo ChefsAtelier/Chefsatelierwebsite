@@ -9,7 +9,10 @@
     '<header class="sticky top-0 z-50 border-b border-white/10 bg-primary/95 backdrop-blur-md">' +
     '<nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6 lg:px-8" aria-label="Hoofdmenu">' +
     '<a href="index.html" class="flex shrink-0 items-center gap-2">' +
-    '<img src="assets/img/chefs-atalier-logo.png" alt="Chefs Atalier" class="h-10 w-auto md:h-12" width="180" height="48" />' +
+    '<picture>' +
+    '<source srcset="assets/img/chefs-atalier-logo.webp" type="image/webp" />' +
+    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atalier" class="h-10 w-auto md:h-12" width="180" height="48" />' +
+    "</picture>" +
     "</a>" +
     '<div class="hidden items-center gap-1 lg:flex lg:gap-2">' +
     '<div class="relative">' +
@@ -71,7 +74,10 @@
     '<div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">' +
     '<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">' +
     "<div>" +
-    '<img src="assets/img/chefs-atalier-logo.png" alt="Chefs Atalier" class="mb-4 h-10 w-auto opacity-90" width="160" height="40" />' +
+    '<picture>' +
+    '<source srcset="assets/img/chefs-atalier-logo.webp" type="image/webp" />' +
+    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atalier" class="mb-4 h-10 w-auto opacity-90" width="160" height="40" />' +
+    "</picture>" +
     '<p class="text-sm text-cream/60">KVK: [nummer volgt]</p>' +
     '<div class="mt-4 flex gap-3">' +
     '<a href="' +
