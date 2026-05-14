@@ -11,7 +11,7 @@
     '<a href="index.html" class="flex shrink-0 items-center gap-2">' +
     '<picture>' +
     '<source srcset="assets/img/chefs-atalier-logo.webp" type="image/webp" />' +
-    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atalier" class="h-10 w-auto md:h-12" width="180" height="48" />' +
+    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atelier" class="h-10 w-auto md:h-12" width="180" height="48" />' +
     "</picture>" +
     "</a>" +
     '<div class="hidden items-center gap-1 lg:flex lg:gap-2">' +
@@ -30,11 +30,10 @@
     "</div>" +
     "</div>" +
     '<a href="over-ons.html" class="rounded-lg px-3 py-2 text-sm font-medium text-cream/90 transition hover:bg-white/10">Over ons</a>' +
-    '<a href="verhalen.html" class="rounded-lg px-3 py-2 text-sm font-medium text-cream/90 transition hover:bg-white/10">Verhalen</a>' +
-    '<a href="kontakt.html" class="rounded-lg px-3 py-2 text-sm font-medium text-cream/90 transition hover:bg-white/10">Kontakt</a>' +
+    '<a href="contact.html" class="rounded-lg px-3 py-2 text-sm font-medium text-cream/90 transition hover:bg-white/10">Contact</a>' +
     "</div>" +
     '<div class="flex items-center gap-2 md:gap-3">' +
-    '<a href="index.html#kontakt" class="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-2 text-sm font-semibold text-primary shadow-lg shadow-black/20 transition hover:bg-secondary/90 sm:px-4 md:px-5">' +
+    '<a href="index.html#contact" class="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-2 text-sm font-semibold text-primary shadow-lg shadow-black/20 transition hover:bg-secondary/90 sm:px-4 md:px-5">' +
     '<i data-lucide="phone" class="h-4 w-4 shrink-0"></i>' +
     "<span>Bel me terug</span>" +
     "</a>" +
@@ -55,8 +54,7 @@
     '<a href="somelier.html" class="rounded-lg py-2 pl-2 text-cream/90">Somelier</a>' +
     '<hr class="my-2 border-white/10" />' +
     '<a href="over-ons.html" class="rounded-lg py-2 font-medium">Over ons</a>' +
-    '<a href="verhalen.html" class="rounded-lg py-2 font-medium">Verhalen</a>' +
-    '<a href="kontakt.html" class="rounded-lg py-2 font-medium">Kontakt</a>' +
+    '<a href="contact.html" class="rounded-lg py-2 font-medium">Contact</a>' +
     "</div>" +
     "</div>" +
     "</header>";
@@ -76,7 +74,7 @@
     "<div>" +
     '<picture>' +
     '<source srcset="assets/img/chefs-atalier-logo.webp" type="image/webp" />' +
-    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atalier" class="mb-4 h-10 w-auto opacity-90" width="160" height="40" />' +
+    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atelier" class="mb-4 h-10 w-auto opacity-90" width="160" height="40" />' +
     "</picture>" +
     '<p class="text-sm text-cream/60">KVK: [nummer volgt]</p>' +
     '<div class="mt-4 flex gap-3">' +
@@ -103,8 +101,7 @@
     '<p class="mb-3 text-sm font-semibold uppercase tracking-wider text-secondary">Meer</p>' +
     '<ul class="space-y-2 text-sm text-cream/75">' +
     '<li><a href="over-ons.html" class="hover:text-secondary">Over ons</a></li>' +
-    '<li><a href="verhalen.html" class="hover:text-secondary">Verhalen</a></li>' +
-    '<li><a href="kontakt.html" class="hover:text-secondary">Kontakt</a></li>' +
+    '<li><a href="contact.html" class="hover:text-secondary">Contact</a></li>' +
     '<li><a href="terms.html" class="hover:text-secondary">Algemene voorwaarden</a></li>' +
     '<li><a href="privacy.html" class="hover:text-secondary">Privacybeleid</a></li>' +
     "</ul>" +
