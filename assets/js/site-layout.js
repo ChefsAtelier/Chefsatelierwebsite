@@ -11,7 +11,7 @@
     '<a href="index.html" class="flex shrink-0 items-center gap-2">' +
     '<picture>' +
     '<source srcset="assets/img/chefs-atalier-logo.webp" type="image/webp" />' +
-    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atelier" class="h-10 w-auto md:h-12" width="180" height="48" />' +
+    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atelier" class="h-10 w-auto md:h-12" width="130" height="48" />' +
     "</picture>" +
     "</a>" +
     '<div class="hidden items-center gap-1 lg:flex lg:gap-2">' +
@@ -25,8 +25,10 @@
     '<a href="borrel.html" class="block px-4 py-2 text-sm text-cream/90 hover:bg-white/10" role="menuitem">Borrel</a>' +
     '<a href="shared-dining.html" class="block px-4 py-2 text-sm text-cream/90 hover:bg-white/10" role="menuitem">Shared Dining</a>' +
     '<a href="avond-experience.html" class="block px-4 py-2 text-sm text-cream/90 hover:bg-white/10" role="menuitem">Avond Experience</a>' +
-    '<a href="extras.html" class="block px-4 py-2 text-sm text-cream/90 hover:bg-white/10" role="menuitem">Extras</a>' +
-    '<a href="somelier.html" class="block px-4 py-2 text-sm text-cream/90 hover:bg-white/10" role="menuitem">Somelier</a>' +
+    '<div class="my-1.5 border-t border-white/10" role="separator"></div>' +
+    '<p class="px-4 pb-1 pt-1.5 text-[10px] font-semibold uppercase tracking-wider text-secondary/80">Extra&apos;s</p>' +
+    '<a href="maak-de-avond-compleet.html" class="block px-4 py-1.5 text-sm text-cream/65 hover:bg-white/10 hover:text-cream/90" role="menuitem">Maak de avond compleet</a>' +
+    '<a href="wine-pairing.html" class="block px-4 pb-2.5 pt-1.5 text-sm text-cream/65 hover:bg-white/10 hover:text-cream/90" role="menuitem">Wine pairing</a>' +
     "</div>" +
     "</div>" +
     '<a href="over-ons.html" class="rounded-lg px-3 py-2 text-sm font-medium text-cream/90 transition hover:bg-white/10">Over ons</a>' +
@@ -50,8 +52,9 @@
     '<a href="borrel.html" class="rounded-lg py-2 pl-2 text-cream/90">Borrel</a>' +
     '<a href="shared-dining.html" class="rounded-lg py-2 pl-2 text-cream/90">Shared Dining</a>' +
     '<a href="avond-experience.html" class="rounded-lg py-2 pl-2 text-cream/90">Avond Experience</a>' +
-    '<a href="extras.html" class="rounded-lg py-2 pl-2 text-cream/90">Extras</a>' +
-    '<a href="somelier.html" class="rounded-lg py-2 pl-2 text-cream/90">Somelier</a>' +
+    '<p class="mt-3 pl-2 text-[10px] font-semibold uppercase tracking-wider text-secondary/80">Extra&apos;s</p>' +
+    '<a href="maak-de-avond-compleet.html" class="rounded-lg py-1.5 pl-4 text-sm text-cream/65">Maak de avond compleet</a>' +
+    '<a href="wine-pairing.html" class="rounded-lg py-1.5 pl-4 text-sm text-cream/65">Wine pairing</a>' +
     '<hr class="my-2 border-white/10" />' +
     '<a href="over-ons.html" class="rounded-lg py-2 font-medium">Over ons</a>' +
     '<a href="contact.html" class="rounded-lg py-2 font-medium">Contact</a>' +
@@ -74,7 +77,7 @@
     "<div>" +
     '<picture>' +
     '<source srcset="assets/img/chefs-atalier-logo.webp" type="image/webp" />' +
-    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atelier" class="mb-4 h-10 w-auto opacity-90" width="160" height="40" />' +
+    '<img src="assets/img/chefs-atalier-logo.webp" alt="Chefs Atelier" class="mb-4 h-10 w-auto opacity-90" width="108" height="40" />' +
     "</picture>" +
     '<p class="text-sm text-cream/60">KVK: [nummer volgt]</p>' +
     '<div class="mt-4 flex gap-3">' +
@@ -93,8 +96,8 @@
     '<li><a href="borrel.html" class="hover:text-secondary">Borrel</a></li>' +
     '<li><a href="shared-dining.html" class="hover:text-secondary">Shared Dining</a></li>' +
     '<li><a href="avond-experience.html" class="hover:text-secondary">Avond Experience</a></li>' +
-    '<li><a href="extras.html" class="hover:text-secondary">Extras</a></li>' +
-    '<li><a href="somelier.html" class="hover:text-secondary">Somelier</a></li>' +
+    '<li><a href="maak-de-avond-compleet.html" class="hover:text-secondary">Maak de avond compleet</a></li>' +
+    '<li><a href="wine-pairing.html" class="hover:text-secondary">Wine pairing</a></li>' +
     "</ul>" +
     "</div>" +
     "<div>" +

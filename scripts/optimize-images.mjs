@@ -151,7 +151,7 @@ async function updateHtmlFiles(placeholders) {
   const htmlFiles = await listHtmlFiles(ROOT);
 
   // Exclude logo from blur-up replacement (keep crisp + cached).
-  const EXCLUDE = new Set(["chefs-atalier-logo.png"]);
+  const EXCLUDE = new Set(["chefs-atalier-logo.png", "signature.png"]);
 
   const imgTagRe = /<img\b[^>]*\bsrc="assets\/img\/([^">]+\.png)"[^>]*\/?>/gi;
 

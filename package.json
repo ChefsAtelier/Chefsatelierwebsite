@@ -3,10 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "images:optimize": "node scripts/optimize-images.mjs"
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "favicons:generate": "node scripts/generate-favicons.mjs"
   },
   "dependencies": {
     "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "to-ico": "^1.1.5"
   }
 }
-
