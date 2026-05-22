@@ -311,23 +311,104 @@
           <h2 class="mb-10 text-center text-3xl font-bold md:text-4xl">Contact</h2>
           <div class="grid gap-10 lg:grid-cols-2 lg:gap-14">
             <div class="rounded-2xl border border-white/10 bg-primary/60 p-6 md:p-8">
-              <h3 class="text-lg font-semibold text-cream">Laat je telefoonnummer achter</h3>
-              <p class="mt-2 text-sm text-cream/65">Laat je nummer achter, binnen 24 uur bellen we je terug.</p>
+              <h3 class="text-lg font-semibold text-cream">Stuur je aanvraag</h3>
+              <p class="mt-2 text-sm text-cream/65">Vul het formulier in en we nemen binnen 24 uur contact met je op.</p>
               <form id="callback-form" class="mt-6" action="#" method="post" novalidate>
                 <input type="hidden" name="access_key" value="10ad5dc4-71c6-40f0-9543-fbcf51c822b5" />
-                <input type="hidden" name="subject" value="Bel me terug aanvraag — Chefs Atelier" />
+                <input type="hidden" name="subject" value="Contactaanvraag — Chefs Atelier" />
                 <input type="hidden" name="from_name" value="Chefs Atelier website" />
                 <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
                 <div id="callback-fields" class="space-y-4">
                   <div>
-                    <label for="phone" class="block text-sm font-medium text-cream/90">Telefoonnummer</label>
+                    <label for="naam" class="block text-sm font-medium text-cream/90">Naam <span class="text-secondary">*</span></label>
+                    <input
+                      type="text"
+                      id="naam"
+                      name="naam"
+                      required
+                      autocomplete="name"
+                      placeholder="Je volledige naam"
+                      class="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-cream placeholder:text-cream/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                    />
+                  </div>
+                  <div>
+                    <label for="gewenste-datum" class="block text-sm font-medium text-cream/90">Gewenste datum <span class="text-secondary">*</span></label>
+                    <div class="mt-1.5 flex gap-2">
+                      <input
+                        type="text"
+                        id="gewenste-datum"
+                        name="gewenste_datum"
+                        required
+                        autocomplete="off"
+                        placeholder="dd-mm-jjjj"
+                        class="min-w-0 flex-1 rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-cream placeholder:text-cream/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                      />
+                      <div class="relative shrink-0">
+                        <button
+                          type="button"
+                          id="gewenste-datum-open"
+                          class="flex h-[50px] w-[50px] items-center justify-center rounded-xl border border-white/15 bg-white/5 text-cream transition hover:border-secondary focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                          title="Kies een datum"
+                          aria-label="Open kalender"
+                        >
+                          <i data-lucide="calendar" class="h-5 w-5"></i>
+                        </button>
+                        <input
+                          type="date"
+                          id="gewenste-datum-picker"
+                          class="pointer-events-none absolute inset-0 h-full w-full opacity-0"
+                          tabindex="-1"
+                          aria-hidden="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="aantal-personen" class="block text-sm font-medium text-cream/90">Aantal personen <span class="text-secondary">*</span></label>
+                    <input
+                      type="text"
+                      id="aantal-personen"
+                      name="aantal_personen"
+                      required
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      autocomplete="off"
+                      placeholder="Bijv. 12"
+                      class="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-cream placeholder:text-cream/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                    />
+                  </div>
+                  <div>
+                    <label for="phone" class="block text-sm font-medium text-cream/90">Telefoonnummer <span class="text-secondary">*</span></label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
+                      required
                       inputmode="tel"
                       autocomplete="tel"
                       placeholder="+31 6 12 34 56 78"
+                      class="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-cream placeholder:text-cream/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                    />
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-cream/90">Mailadres <span class="text-secondary">*</span></label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      autocomplete="email"
+                      placeholder="jouw@email.nl"
+                      class="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-cream placeholder:text-cream/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                    />
+                  </div>
+                  <div>
+                    <label for="gelegenheid" class="block text-sm font-medium text-cream/90">Gelegenheid (optioneel)</label>
+                    <input
+                      type="text"
+                      id="gelegenheid"
+                      name="gelegenheid"
+                      placeholder="Bijv. verjaardag, jubileum, zakelijk diner"
                       class="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-cream placeholder:text-cream/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
                     />
                   </div>
@@ -337,11 +418,11 @@
                       id="msg"
                       name="msg"
                       rows="3"
-                      placeholder="Bijv. datum, aantal gasten…"
+                      placeholder="Vertel ons kort over je wensen…"
                       class="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-cream placeholder:text-cream/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
                     ></textarea>
                   </div>
-                  <button
+              <button
                     type="submit"
                     id="callback-submit"
                     class="w-full rounded-xl bg-secondary py-3.5 text-sm font-semibold text-primary transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-60"
@@ -514,125 +595,7 @@
         setDotsActive(0);
       })();
 
-      (function () {
-        var form = document.getElementById("callback-form");
-        var status = document.getElementById("callback-status");
-        var submitBtn = document.getElementById("callback-submit");
-        var phoneInput = document.getElementById("phone");
-        if (!form || !status || !submitBtn) return;
-
-        function normalizePhone(input) {
-          var raw = (input || "").trim();
-          if (!raw) return "";
-          // Convert 00 prefix to + for international dialing
-          if (raw.indexOf("00") === 0) raw = "+" + raw.slice(2);
-          // Keep only digits and a single leading +
-          var plus = raw.indexOf("+") === 0 ? "+" : "";
-          var digits = raw.replace(/[^\d]/g, "");
-          return plus ? "+" + digits : digits;
-        }
-
-        function isValidPhone(normalized) {
-          if (!normalized) return false;
-
-          // International (E.164-ish): + followed by 8-15 digits
-          if (normalized.indexOf("+") === 0) {
-            var d = normalized.slice(1);
-            return /^\d{8,15}$/.test(d);
-          }
-
-          // NL local: allow 9-10 digits starting with 0 (e.g. 06xxxxxxxx or 0xxxxxxxxx)
-          // (We keep it permissive so other EU locals can still pass if they’re 9-10 digits.)
-          if (/^0\d{8,9}$/.test(normalized)) return true;
-
-          // Otherwise accept 9-15 digits (fallback for other EU locals without +)
-          return /^\d{9,15}$/.test(normalized);
-        }
-
-        function validatePhone(showError) {
-          if (!phoneInput) return true;
-          var normalized = normalizePhone(phoneInput.value);
-          var ok = isValidPhone(normalized);
-
-          phoneInput.classList.toggle("border-red-400/60", !ok);
-          phoneInput.classList.toggle("focus:border-red-400", !ok);
-          phoneInput.setAttribute("aria-invalid", ok ? "false" : "true");
-
-          if (!ok && showError) {
-            setStatus("Vul een geldig telefoonnummer in (NL of Europees, bijv. +31… of 06…).", "error");
-          }
-
-          return ok;
-        }
-
-        function setStatus(message, kind) {
-          status.textContent = message;
-          status.classList.remove("hidden");
-          status.dataset.kind = kind || "";
-          status.classList.toggle("border-secondary/40", kind === "success");
-          status.classList.toggle("bg-secondary/10", kind === "success");
-          status.classList.toggle("border-red-400/40", kind === "error");
-          status.classList.toggle("bg-red-500/10", kind === "error");
-        }
-
-        if (phoneInput) {
-          phoneInput.addEventListener("input", function () {
-            if (status.dataset.kind !== "error") return;
-            status.classList.add("hidden");
-            status.dataset.kind = "";
-            phoneInput.classList.remove("border-red-400/60", "focus:border-red-400");
-            phoneInput.setAttribute("aria-invalid", "false");
-          });
-        }
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          status.classList.add("hidden");
-
-          if (!validatePhone(true)) {
-            if (phoneInput) phoneInput.focus();
-            return;
-          }
-
-          submitBtn.disabled = true;
-          var prevText = submitBtn.textContent;
-          submitBtn.textContent = "Versturen…";
-
-          var formData = new FormData(form);
-
-          fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData,
-          })
-            .then(function (res) {
-              return res.json().then(function (data) {
-                return { ok: res.ok, data: data };
-              });
-            })
-            .then(function (result) {
-              if (result.ok && result.data && result.data.success) {
-                setStatus(
-                  "Top! We nemen binnen 24 uur contact op. Geen stress over de catering; begin jij maar vast met aftellen naar het feest!",
-                  "success"
-                );
-                var fields = document.getElementById("callback-fields");
-                if (fields) fields.classList.add("hidden");
-                submitBtn.disabled = true;
-                form.reset();
-              } else {
-                setStatus("Oeps, het verzenden ging niet goed. Probeer het nog eens of stuur ons een bericht.", "error");
-              }
-            })
-            .catch(function () {
-              setStatus("Oeps, het verzenden ging niet goed. Probeer het nog eens of stuur ons een bericht.", "error");
-            })
-            .finally(function () {
-              submitBtn.disabled = false;
-              submitBtn.textContent = prevText;
-            });
-        });
-      })();
     </script>
+    <script src="assets/js/contact-form.js"></script>
   </body>
 </html>
